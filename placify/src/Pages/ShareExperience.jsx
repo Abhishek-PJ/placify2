@@ -50,7 +50,7 @@ const ShareExperience = () => {
       };
 
       // ✅ Send payload to your backend
-      await axios.post('http://localhost:4000/api/experiences', payload);
+axios.post('https://54.196.240.185:4000/api/experiences', payload);
 
       setStatus('Experience submitted successfully!');
       setFormData({
