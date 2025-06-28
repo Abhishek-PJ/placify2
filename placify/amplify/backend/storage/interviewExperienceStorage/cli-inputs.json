@@ -1,0 +1,14 @@
+{
+  "resourceName": "interviewExperienceStorage",
+  "policyUUID": "ed013891",
+  "bucketName": "placify7a49080229e747fe93064a1529f4372e",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

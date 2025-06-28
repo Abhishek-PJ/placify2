@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "placify50d7ee69": {}
+      },
+      "storage": {
+        "interviewExperienceStorage": {}
       }
     }
   }
