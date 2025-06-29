@@ -13,17 +13,25 @@ const InterviewExperience = () => {
     role: '',
     description: ''
   });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
-  // 🔄 Fetch all experiences from backend
+  // 🔄 Fetch all experiences
   useEffect(() => {
     const fetchAll = async () => {
+      setLoading(true);
       try {
-        const res = await axios.get('https://54.196.240.185:4000/api/experiences');
-        setExperiences(res.data);
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/experiences`);
+        setExperiences(Array.isArray(res.data) ? res.data : []);
+        setError('');
       } catch (error) {
         console.error('Error fetching experiences:', error);
+        setError('Failed to load experiences.');
+      } finally {
+        setLoading(false);
       }
     };
+
     fetchAll();
   }, []);
 
@@ -49,10 +57,10 @@ const InterviewExperience = () => {
     }
   }, [experiences]);
 
-  // 🗑 Delete handler
+  // 🗑 Delete experience
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://54.196.240.185:4000/api/experiences/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/experiences/${id}`);
       setExperiences((prev) => prev.filter((exp) => exp.id !== id));
     } catch (error) {
       console.error('Failed to delete:', error);
@@ -72,18 +80,18 @@ const InterviewExperience = () => {
   // 💾 Save edited experience
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`https://54.196.240.185:4000/api/experiences/${id}`, editData);
+      await axios.put(`${import.meta.env.VITE_API_BASE_URL}/api/experiences/${id}`, editData);
       const updated = experiences.map((exp) =>
         exp.id === id ? { ...exp, ...editData } : exp
       );
       setExperiences(updated);
-      setEditId(null); // Exit edit mode
+      setEditId(null);
     } catch (error) {
       console.error('Failed to update:', error);
     }
   };
 
-  // ⌨️ Edit input change handler
+  // ⌨️ Input change handler
   const handleEditChange = (e) => {
     const { name, value } = e.target;
     setEditData((prev) => ({ ...prev, [name]: value }));
@@ -92,7 +100,11 @@ const InterviewExperience = () => {
   return (
     <div className="max-w-3xl mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6 text-center">Interview Experiences</h2>
-      {experiences.map((exp) => (
+
+      {loading && <p className="text-center text-gray-500">Loading...</p>}
+      {error && <p className="text-center text-red-600">{error}</p>}
+
+      {Array.isArray(experiences) && experiences.map((exp) => (
         <div key={exp.id} className="bg-white p-4 rounded shadow mb-4">
           {editId === exp.id ? (
             <>
@@ -121,6 +133,7 @@ const InterviewExperience = () => {
               <p className="text-gray-700 mt-2">{exp.description}</p>
             </>
           )}
+
           <p className="text-sm text-gray-500 mt-1">User ID: {exp.user_id}</p>
 
           {exp.file_key && fileLinks[exp.id] && (
