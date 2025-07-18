@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { uploadData } from 'aws-amplify/storage';
 import { useAuthenticator } from '@aws-amplify/ui-react';
 import axios from 'axios';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const ShareExperience = () => {
   const { user } = useAuthenticator((context) => [context.user]);
@@ -68,6 +70,8 @@ const ShareExperience = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="max-w-xl mx-auto mt-10 p-6 bg-white rounded shadow">
       <h2 className="text-xl font-bold mb-4">Share Your Interview Experience</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -151,6 +155,8 @@ const ShareExperience = () => {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 };
 

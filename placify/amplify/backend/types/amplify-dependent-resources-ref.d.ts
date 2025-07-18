@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
   "auth": {
-    "placify50d7ee69": {
+    "placify9ced4ef7": {
       "AppClientID": "string",
       "AppClientIDWeb": "string",
       "IdentityPoolId": "string",
@@ -11,7 +11,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "storage": {
-    "interviewExperienceStorage": {
+    "s36f705abc": {
       "BucketName": "string",
       "Region": "string"
     }

@@ -1,6 +1,6 @@
 {
   "auth": {
-    "placify50d7ee69": {
+    "placify9ced4ef7": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -28,7 +28,7 @@
     }
   },
   "storage": {
-    "interviewExperienceStorage": {
+    "s36f705abc": {
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "S3"
