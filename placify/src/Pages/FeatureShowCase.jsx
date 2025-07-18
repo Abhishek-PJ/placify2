@@ -1,52 +1,73 @@
-import React from 'react';
-import { Shield, Users, FileText, Database, Cloud, Globe, Lock, Settings } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Shield,
+  Users,
+  FileText,
+  Database,
+  Cloud,
+  Globe,
+  Lock,
+  Settings,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FeatureShowcase = () => {
   const features = [
     {
       icon: <Shield className="w-8 h-8 text-blue-600" />,
       title: "Secure Authentication",
-      description: "AWS Cognito-powered user authentication with role-based access control for Admins and Students.",
-      highlight: "Enterprise Security"
+      description:
+        "AWS Cognito-powered user authentication with role-based access control for Admins and Students.",
+      highlight: "Enterprise Security",
     },
     {
       icon: <Users className="w-8 h-8 text-blue-600" />,
       title: "Interview Experience Sharing",
-      description: "Add, view, edit, and delete interview experiences. Connect with peers and learn from their placement journeys.",
-      highlight: "Peer Learning"
+      description:
+        "Add, view, edit, and delete interview experiences. Connect with peers and learn from their placement journeys.",
+      highlight: "Peer Learning",
     },
     {
       icon: <FileText className="w-8 h-8 text-blue-600" />,
       title: "Smart File Management",
-      description: "Upload resources to AWS S3 with secure signed URLs. Share PDFs, documents, and study materials seamlessly.",
-      highlight: "Cloud Storage"
+      description:
+        "Upload resources to AWS S3 with secure signed URLs. Share PDFs, documents, and study materials seamlessly.",
+      highlight: "Cloud Storage",
     },
     {
       icon: <Database className="w-8 h-8 text-blue-600" />,
       title: "Placement Data Analytics",
-      description: "Admins can manage placement data while students access comprehensive peer placement insights and statistics.",
-      highlight: "Data-Driven"
+      description:
+        "Admins can manage placement data while students access comprehensive peer placement insights and statistics.",
+      highlight: "Data-Driven",
     },
     {
       icon: <Cloud className="w-8 h-8 text-blue-600" />,
       title: "Scalable Architecture",
-      description: "RESTful API built with Node.js and Express, MySQL database, and hosted on AWS EC2 for reliable performance.",
-      highlight: "Enterprise Grade"
+      description:
+        "RESTful API built with Node.js and Express, MySQL database, and hosted on AWS EC2 for reliable performance.",
+      highlight: "Enterprise Grade",
     },
     {
       icon: <Globe className="w-8 h-8 text-blue-600" />,
       title: "Modern Web Experience",
-      description: "React + Vite frontend with Tailwind CSS, hosted on Vercel with custom domain and HTTPS security.",
-      highlight: "Lightning Fast"
-    }
+      description:
+        "React + Vite frontend with Tailwind CSS, hosted on Vercel with custom domain and HTTPS security.",
+      highlight: "Lightning Fast",
+    },
   ];
 
   const techStack = [
     { category: "Frontend", technologies: ["React", "Tailwind CSS"] },
     { category: "Backend", technologies: ["Node.js", "Express", "MySQL"] },
-    { category: "Cloud", technologies: ["AWS Cognito", "AWS S3", "AWS EC2","AWS RDS"] },
-    { category: "Security", technologies: ["HTTPS", "Let's Encrypt SSL", "Signed URLs"] }
+    {
+      category: "Cloud",
+      technologies: ["AWS Cognito", "AWS S3", "AWS EC2", "AWS RDS"],
+    },
+    {
+      category: "Security",
+      technologies: ["HTTPS", "Let's Encrypt SSL", "Signed URLs"],
+    },
   ];
 
   return (
@@ -59,7 +80,9 @@ const FeatureShowcase = () => {
             <span className="text-blue-600"> Student Success</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-            A comprehensive platform built with enterprise-grade technology to connect students, share interview experiences, and accelerate placement success through secure, scalable solutions.
+            A comprehensive platform built with enterprise-grade technology to
+            connect students, share interview experiences, and accelerate
+            placement success through secure, scalable solutions.
           </p>
         </div>
 
@@ -101,7 +124,10 @@ const FeatureShowcase = () => {
                 </h4>
                 <div className="space-y-2">
                   {stack.technologies.map((tech, techIndex) => (
-                    <div key={techIndex} className="bg-gray-50 rounded-lg px-3 py-2 text-sm text-gray-700">
+                    <div
+                      key={techIndex}
+                      className="bg-gray-50 rounded-lg px-3 py-2 text-sm text-gray-700"
+                    >
                       {tech}
                     </div>
                   ))}
@@ -115,58 +141,48 @@ const FeatureShowcase = () => {
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 mb-12 md:mb-16">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 text-center">
             <div className="border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0 sm:pr-8 last:border-b-0 last:border-r-0">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">99.9%</div>
-              <div className="text-sm md:text-base text-gray-600">Platform Uptime</div>
-            </div>
-            <div className="border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0 sm:pr-8 last:border-b-0 last:border-r-0">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">Secure</div>
-              <div className="text-sm md:text-base text-gray-600">AWS-Powered Infrastructure</div>
-            </div>
-            <div className="border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0 sm:pr-8 last:border-b-0 last:border-r-0">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">Fast</div>
-              <div className="text-sm md:text-base text-gray-600">Lightning Quick Response</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Platform Access Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-6 md:p-8 mb-12 md:mb-16 text-white">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-xl md:text-2xl font-bold mb-4">
-                Access Placify Platform
-              </h3>
-              <p className="text-blue-100 mb-6">
-                Experience the power of our secure, cloud-hosted platform at placify.fun with HTTPS encryption and enterprise-grade security.
-              </p>
-              <div className="flex items-center space-x-2 text-sm">
-                <Lock className="w-4 h-4" />
-                <span>Secured with SSL encryption</span>
+              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
+                99.9%
+              </div>
+              <div className="text-sm md:text-base text-gray-600">
+                Platform Uptime
               </div>
             </div>
-            <div className="text-center">
-              <div className="bg-white/10 rounded-lg p-6 mb-4">
-                <Globe className="w-12 h-12 text-white mx-auto mb-3" />
-                <div className="text-lg font-semibold">placify.fun</div>
-                <div className="text-blue-100 text-sm">Custom Domain</div>
+            <div className="border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0 sm:pr-8 last:border-b-0 last:border-r-0">
+              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
+                Secure
+              </div>
+              <div className="text-sm md:text-base text-gray-600">
+                AWS-Powered Infrastructure
+              </div>
+            </div>
+            <div className="border-b sm:border-b-0 sm:border-r border-gray-200 pb-6 sm:pb-0 sm:pr-8 last:border-b-0 last:border-r-0">
+              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">
+                Fast
+              </div>
+              <div className="text-sm md:text-base text-gray-600">
+                Lightning Quick Response
               </div>
             </div>
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center bg-blue-600 rounded-2xl p-8 md:p-12 text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Ready to Share Your Success Story?
-          </h3>
-          <p className="text-base md:text-xl mb-6 md:mb-8 text-blue-100 px-4">
-            Join our secure platform and help fellow students succeed with your interview experiences and resources.
-          </p>
-          <div className="flex justify-center">
-            <button className="bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-sm md:text-base">
-              <Link to="/share-experience">Share Your Experience</Link>
-            </button>
-          </div>
+        
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center bg-blue-600 rounded-2xl p-8 md:p-12 text-white">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4">
+          Ready to Share Your Success Story?
+        </h3>
+        <p className="text-base md:text-xl mb-6 md:mb-8 text-blue-100 px-4">
+          Join our secure platform and help fellow students succeed with your
+          interview experiences and resources.
+        </p>
+        <div className="flex justify-center">
+          <button className="bg-white text-blue-600 px-6 md:px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 text-sm md:text-base">
+            <Link to="/share-experience">Share Your Experience</Link>
+          </button>
         </div>
       </div>
     </div>
